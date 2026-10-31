@@ -1,0 +1,112 @@
+.camera-monitor {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+}
+
+.camera-frame {
+  position: relative;
+  width: 100%;
+  height: 165px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.camera-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  transform: scaleX(-1);
+}
+
+.camera-video.visible {
+  opacity: 1;
+}
+
+.camera-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: scaleX(-1);
+}
+
+.camera-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+}
+
+.camera-overlay.overlay-error {
+  color: #ef4444;
+}
+
+.pulse-icon {
+  animation: pulse 1.5s infinite;
+}
+
+.camera-status-badge {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  color: var(--text-primary);
+}
+
+.camera-status-badge.status-monitoring {
+  color: #34d399;
+}
+
+.camera-status-badge.status-no_face {
+  color: #fbbf24;
+}
+
+.camera-status-badge.status-multiple_faces {
+  color: #ef4444;
+}
+
+.camera-hint {
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 0 0.25rem;
+  min-height: 1.2em;
+}
+
+/* Stack below the avatar on narrow / mobile viewports */
+@media (max-width: 720px) {
+  .camera-monitor {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mock-mirror",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run start --prefix backend",
+    "dev:backend": "npm run dev --prefix backend",
+    "start:backend": "npm run start --prefix backend",
+    "test:backend": "npm test --prefix backend",
+    "test:all": "node backend/tests/test_question_rules.js && node backend/tests/test_domain_question_rules.js && node backend/tests/test_adaptive_intelligence.js && node backend/tests/test_difficulty_and_job_fit.js && node backend/tests/test_end_of_interview_flow.js && node backend/tests/test_interview_conversation_flow.js && node backend/tests/test_no_response_rules.js && node backend/tests/test_conduct_conversation_controller.js",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend"
+  }
+}

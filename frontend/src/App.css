@@ -1,0 +1,42 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 80px; /* Account for fixed navbar */
+  position: relative;
+  z-index: 1;
+}
+
+/* Background effects */
+.app::before,
+.app::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  opacity: 0.4;
+  animation: float 20s infinite ease-in-out alternate;
+}
+
+.app::before {
+  top: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: var(--primary-glow);
+}
+
+.app::after {
+  bottom: -100px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: rgba(139, 92, 246, 0.2);
+  animation-delay: -5s;
+}
